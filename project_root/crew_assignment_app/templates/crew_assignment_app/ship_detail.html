@@ -1,0 +1,21 @@
+{% extends "crew_assignment_app/base.html" %}
+
+{% block content %}
+  <h2>Ship: {{ ship.name }}</h2>
+  <p>ID: {{ ship.id }}</p>
+  <p>Ship Code: {{ ship.ship_code }}</p>
+  <p>Brand: {{ ship.brand }}</p>
+
+  <h3>Assigned Crew Members:</h3>
+  <ul>
+    {% for crewmember in ship.crewmembers.all %}
+      <li>
+        <a href="{% url 'crewmember_detail' crewmember.id %}">{{ crewmember.name }}</a>
+      </li>
+    {% empty %}
+      <li>No crew members assigned to this ship.</li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'ship_list' %}">Back to Ship List</a>
+{% endblock %}

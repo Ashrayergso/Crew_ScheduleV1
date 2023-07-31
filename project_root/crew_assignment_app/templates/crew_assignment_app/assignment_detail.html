@@ -1,0 +1,15 @@
+{% extends "crew_assignment_app/base.html" %}
+
+{% block content %}
+  <h2>Assignment Detail</h2>
+  <div class="assignment-detail">
+    <p><strong>ID:</strong> {{ assignment.id }}</p>
+    <p><strong>Crew Member:</strong> {{ assignment.crewmember.name }}</p>
+    <p><strong>Ship:</strong> {{ assignment.ship.name }}</p>
+    <p><strong>Start Date:</strong> {{ assignment.start_date }}</p>
+    <p><strong>End Date:</strong> {{ assignment.end_date }}</p>
+    <p><strong>Position:</strong> {{ assignment.position.name }}</p>
+  </div>
+  <a href="{% url 'assignment_edit' assignment.id %}">Edit Assignment</a>
+  <a href="{% url 'assignment_delete' assignment.id %}">Delete Assignment</a>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "crew_assignment_app/base.html" %}
+
+{% block content %}
+  <h2>Assignment List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Crew Member</th>
+        <th>Ship</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for assignment in assignment_list %}
+        <tr>
+          <td>{{ assignment.id }}</td>
+          <td>{{ assignment.crewmember.name }}</td>
+          <td>{{ assignment.ship.name }}</td>
+          <td>{{ assignment.start_date }}</td>
+          <td>{{ assignment.end_date }}</td>
+          <td>{{ assignment.position.name }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="6">No assignments found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
