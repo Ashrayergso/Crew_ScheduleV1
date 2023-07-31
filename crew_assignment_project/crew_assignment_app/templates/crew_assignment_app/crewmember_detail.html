@@ -1,0 +1,28 @@
+{% extends "crew_assignment_app/base.html" %}
+
+{% block content %}
+  <h2>Crew Member: {{ crewmember.name }}</h2>
+  <p>ID: {{ crewmember.id }}</p>
+  <p>Ship ID: {{ crewmember.shipid }}</p>
+  <p>Status: {{ crewmember.status }}</p>
+  <p>Position: {{ crewmember.position.name }}</p>
+  <p>Gender: {{ crewmember.gender }}</p>
+  <p>Availability Date: {{ crewmember.availability_date }}</p>
+
+  <h3>Certificates</h3>
+  {% for cert in crewmember.certificates.all %}
+    <p>{{ cert.name }} - Issued by: {{ cert.issuing_authority }} - Expiry Date: {{ cert.expiry_date }}</p>
+  {% empty %}
+    <p>No certificates found.</p>
+  {% endfor %}
+
+  <h3>Qualifications</h3>
+  {% for qual in crewmember.qualifications.all %}
+    <p>{{ qual.name }}</p>
+  {% empty %}
+    <p>No qualifications found.</p>
+  {% endfor %}
+
+  <a href="{% url 'crewmember_edit' crewmember.id %}" class="btn btn-primary">Edit</a>
+  <a href="{% url 'crewmember_delete' crewmember.id %}" class="btn btn-danger">Delete</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'crew_assignment_app/base.html' %}
+
+{% block content %}
+  <h2>Edit Assignment</h2>
+  <form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="save btn btn-default">Save</button>
+  </form>
+{% endblock %}
