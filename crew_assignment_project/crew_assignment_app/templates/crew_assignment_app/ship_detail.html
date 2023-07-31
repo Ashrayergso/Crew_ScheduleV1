@@ -17,5 +17,6 @@
     {% endfor %}
   </ul>
 
-  <a href="{% url 'ship_list' %}">Back to Ship List</a>
+  <a href="{% url 'ship_edit' ship.id %}" class="btn btn-primary">Edit Ship</a>
+  <a href="{% url 'ship_delete' ship.id %}" class="btn btn-danger">Delete Ship</a>
 {% endblock %}

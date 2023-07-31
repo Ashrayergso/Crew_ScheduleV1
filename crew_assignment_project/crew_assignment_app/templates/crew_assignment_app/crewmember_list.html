@@ -1,4 +1,4 @@
-{% extends "crew_assignment_app/base.html" %}
+{% extends 'crew_assignment_app/base.html' %}
 
 {% block content %}
   <h2>Crew Members</h2>
@@ -22,16 +22,8 @@
           <td><a href="{% url 'crewmember_detail' crewmember.id %}">{{ crewmember.name }}</a></td>
           <td>{{ crewmember.status }}</td>
           <td>{{ crewmember.position.name }}</td>
-          <td>
-            {% for cert in crewmember.certificates.all %}
-              {{ cert.name }}
-            {% endfor %}
-          </td>
-          <td>
-            {% for qual in crewmember.qualifications.all %}
-              {{ qual.name }}
-            {% endfor %}
-          </td>
+          <td>{{ crewmember.certificates|join:", " }}</td>
+          <td>{{ crewmember.qualifications|join:", " }}</td>
           <td>{{ crewmember.availability_date }}</td>
           <td>{{ crewmember.gender }}</td>
         </tr>

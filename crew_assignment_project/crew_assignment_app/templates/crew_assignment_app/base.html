@@ -9,15 +9,15 @@
 </head>
 <body>
     <nav>
-        <a href="{% url 'crewmember_list' %}">Crew Members</a> |
-        <a href="{% url 'ship_list' %}">Ships</a> |
+        <a href="{% url 'crewmember_list' %}">Crew Members</a>
+        <a href="{% url 'ship_list' %}">Ships</a>
         <a href="{% url 'assignment_list' %}">Assignments</a>
     </nav>
 
     {% block content %}
     {% endblock content %}
 
-    <script src="{% static 'crew_assignment_app/script.js' %}"></script>
+    <script src="{% static 'crew_assignment_app/scripts.js' %}"></script>
 </body>
 </html>
 ```

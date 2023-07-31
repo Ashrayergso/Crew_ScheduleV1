@@ -3,25 +3,25 @@ from django.db import models
 
 class Positions(models.Model):
     position_code = models.CharField(max_length=50)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=200)
 
 class Cert(models.Model):
-    name = models.CharField(max_length=100)
-    issuing_authority = models.CharField(max_length=100)
+    name = models.CharField(max_length=200)
+    issuing_authority = models.CharField(max_length=200)
     expiry_date = models.DateField()
     validity_days = models.IntegerField()
 
 class Qualification(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=200)
     required_certificates = models.ManyToManyField(Cert)
 
 class Ship(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=200)
     ship_code = models.CharField(max_length=50)
-    brand = models.CharField(max_length=50)
+    brand = models.CharField(max_length=200)
 
 class CrewMember(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=200)
     status = models.CharField(max_length=50)
     position = models.ForeignKey(Positions, on_delete=models.CASCADE)
     certificates = models.ManyToManyField(Cert)

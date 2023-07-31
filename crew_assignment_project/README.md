@@ -1,17 +1,12 @@
-# Crew Assignment App
+# Crew Assignment Project
 
-This is a Django-based web application that automates the assignment of crew members to ships. The application considers various factors such as crew position, contract duration, and vacation time for optimal assignment.
+This is a Django-based web application that automates the assignment of crew members to ships. The application considers various factors such as crew position, contract duration, and vacation time for optimal assignment, promoting efficiency and reducing errors in crew scheduling.
 
 ## Tech Stack
 
 - Django framework for building the application
 - PostgreSQL for the database
-- Python
-- Conda for Python environment isolation
-
-## Requirements
-
-The application implements user authentication using Django's built-in authentication.
+- Python, Django, and Conda for Python environment isolation
 
 ## Data Models
 
@@ -24,10 +19,6 @@ The Django models included are:
 - `Positions`
 - `Assignment`
 - `ShipCrewAllowance`
-
-## Views
-
-The application includes list/detail views for each model, views to create/edit assignments, an automatic assignment view, and views to filter/sort ship and crew lists.
 
 ## Core Feature
 
@@ -45,13 +36,12 @@ The URL configuration defines the views and maps URLs to them.
 
 The primary focus of the project is to automate crew scheduling, thereby increasing efficiency and reducing errors.
 
-## Tasks
+## Requirements
 
-The tasks executed are:
-
-- Developing a Django-based application to automate crew member assignment to ships.
-- Ensuring the application considers factors such as crew position, contract duration, vacation time, etc., for optimal assignment.
-- Promoting efficiency and reducing errors in crew scheduling.
+- Develop the `assignCrewToShips` function for automatic crew-to-ship assignment.
+- Create list/detail views for each data model.
+- Create views to create/edit assignments.
+- Create views to filter/sort ship and crew lists.
 
 ## UI Design
 
@@ -59,7 +49,7 @@ The user interface is clean and intuitive, with a main navigation bar for access
 
 ## Backend
 
-The backend is built using Django. It contains models, views for each model, and URL patterns for each view. Django REST framework is used for API endpoints.
+The backend is built using Django. It contains models, views for each model, and URL patterns for each view. Django REST framework can be used if API endpoints are needed.
 
 ## Frontend
 
@@ -74,14 +64,10 @@ The application uses Django's messaging framework to display messages like:
 - "ASSIGNMENT_SUCCESS": Displayed when a new assignment is successfully created.
 - "ASSIGNMENT_FAILURE": Displayed when there is an error creating a new assignment.
 
-## UI Components and Views
+## Setup and Installation
 
-The UI components and views are built using Django's template language. CSS is used for styling. The application is responsive and intuitive, with a modern design. Error handling and alerts are a crucial part of the application to ensure a smooth user experience.
-
-## Installation
-
-Refer to the `instructions.txt` file for detailed instructions on how to deploy the app.
+Please refer to `instructions.txt` for setup and installation instructions.
 
 ## Dependencies
 
-Refer to the `requirements.txt` file for a list of dependencies required to run the app.
+Please refer to `requirements.txt` for a list of dependencies required for this project.

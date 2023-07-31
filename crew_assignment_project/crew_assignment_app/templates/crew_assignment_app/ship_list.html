@@ -1,4 +1,4 @@
-{% extends "crew_assignment_app/base.html" %}
+{% extends 'crew_assignment_app/base.html' %}
 
 {% block content %}
   <h2>Ship List</h2>
@@ -21,6 +21,8 @@
           <td>{{ ship.brand }}</td>
           <td>
             <a href="{% url 'ship_detail' ship.id %}">View</a>
+            <a href="{% url 'ship_edit' ship.id %}">Edit</a>
+            <a href="{% url 'ship_delete' ship.id %}" onclick="return confirm('Are you sure you want to delete this ship?')">Delete</a>
           </td>
         </tr>
       {% empty %}
@@ -30,4 +32,5 @@
       {% endfor %}
     </tbody>
   </table>
+  <a href="{% url 'ship_create' %}">Add New Ship</a>
 {% endblock %}

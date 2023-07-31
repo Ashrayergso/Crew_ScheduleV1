@@ -1,4 +1,4 @@
-{% extends "crew_assignment_app/base.html" %}
+{% extends 'crew_assignment_app/base.html' %}
 
 {% block content %}
   <h2>Assignment Detail</h2>
@@ -10,6 +10,9 @@
     <p><strong>End Date:</strong> {{ assignment.end_date }}</p>
     <p><strong>Position:</strong> {{ assignment.position.name }}</p>
   </div>
-  <a href="{% url 'assignment_edit' assignment.id %}">Edit Assignment</a>
-  <a href="{% url 'assignment_delete' assignment.id %}">Delete Assignment</a>
+
+  <div class="buttons">
+    <a href="{% url 'assignment_edit' assignment.id %}" class="btn btn-primary">Edit Assignment</a>
+    <a href="{% url 'assignment_delete' assignment.id %}" class="btn btn-danger">Delete Assignment</a>
+  </div>
 {% endblock %}

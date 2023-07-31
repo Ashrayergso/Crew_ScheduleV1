@@ -1,21 +1,21 @@
 Shared dependencies across the files include:
 
-1. **Data Models:** `CrewMember`, `Cert`, `Qualification`, `Ship`, `Positions`, `Assignment`, `ShipCrewAllowance`. These models are used across multiple files such as `models.py`, `views.py`, `admin.py`, and `tests.py`.
+1. **Data Models**: The Django models `CrewMember`, `Cert`, `Qualification`, `Ship`, `Positions`, `Assignment`, and `ShipCrewAllowance` are shared across the models.py, views.py, and admin.py files. They are also used in the templates for rendering data.
 
-2. **Function Names:** `assignCrewToShips` is a core function that will be used in `views.py` and potentially in `tests.py`.
+2. **Function Names**: The function `assignCrewToShips` is a core feature of the application and will be used in views.py and potentially in scripts.js for AJAX calls.
 
-3. **URL Names:** URL names defined in `urls.py` will be used in `views.py` and the Django templates for linking and navigation.
+3. **URL Names**: URL names defined in urls.py are used in views.py for redirecting and in templates for creating links.
 
-4. **Template Names:** Django templates such as `base.html`, `crewmember_list.html`, `crewmember_detail.html`, `ship_list.html`, `ship_detail.html`, `assignment_list.html`, `assignment_detail.html` are used in `views.py` for rendering.
+4. **Message Names**: The message names "CREW_FETCH_SUCCESS", "SHIP_FETCH_SUCCESS", "ASSIGNMENT_SUCCESS", and "ASSIGNMENT_FAILURE" are used in views.py to display messages and in templates to render these messages.
 
-5. **Static Files:** `styles.css` and `script.js` are used in the Django templates for styling and interactivity.
+5. **DOM Element IDs**: The templates will contain various DOM elements with unique IDs that JavaScript functions in scripts.js will use for interactivity. These IDs are shared between the HTML templates and the JavaScript file.
 
-6. **Message Names:** "CREW_FETCH_SUCCESS", "SHIP_FETCH_SUCCESS", "ASSIGNMENT_SUCCESS", "ASSIGNMENT_FAILURE" are used in `views.py` and Django templates for user notifications.
+6. **CSS Classes**: CSS classes defined in styles.css are used in the HTML templates for styling.
 
-7. **Settings:** Django settings defined in `settings.py` are used in `manage.py`, `wsgi.py`, and potentially in other files for configuration.
+7. **Settings**: The settings defined in settings.py are used across the application, including in manage.py, wsgi.py, and asgi.py.
 
-8. **DOM Element IDs:** While not explicitly mentioned, any DOM element IDs used in the JavaScript file (`script.js`) would need to match those in the corresponding Django templates.
+8. **Requirements**: The requirements defined in requirements.txt are used for setting up the environment for the Django application.
 
-9. **Database Queries:** Queries like `Ship Open Positions Query`, `Next Available Crew Query`, `Crew Scheduling Report Query` are likely to be used in `views.py` and `models.py`.
+9. **Instructions**: The instructions defined in instructions.txt are used for deploying the app.
 
-10. **App Name:** The app name `crew_assignment_app` is used in Django settings and across multiple files for configuration and linking.
+10. **Tests**: The tests defined in tests.py are used for testing the models, views, and other functionalities of the app.
