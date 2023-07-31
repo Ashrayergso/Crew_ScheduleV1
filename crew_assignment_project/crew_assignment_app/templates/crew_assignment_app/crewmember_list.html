@@ -1,0 +1,37 @@
+{% extends 'crew_assignment_app/base.html' %}
+
+{% block content %}
+  <h2>Crew Members</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Position</th>
+        <th>Certificates</th>
+        <th>Qualifications</th>
+        <th>Availability Date</th>
+        <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for crewmember in crewmembers %}
+        <tr>
+          <td>{{ crewmember.id }}</td>
+          <td><a href="{% url 'crewmember_detail' crewmember.id %}">{{ crewmember.name }}</a></td>
+          <td>{{ crewmember.status }}</td>
+          <td>{{ crewmember.position.name }}</td>
+          <td>{{ crewmember.certificates|join:", " }}</td>
+          <td>{{ crewmember.qualifications|join:", " }}</td>
+          <td>{{ crewmember.availability_date }}</td>
+          <td>{{ crewmember.gender }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="8">No crew members found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
